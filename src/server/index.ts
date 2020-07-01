@@ -11,8 +11,8 @@ const isTest = process.env.NODE_ENV === "test";
 
 initApp(app);
 
-// if (!__PROD__) {
-if (false) {
+if (!__PROD__) {
+  // if (false) {
   const serve = require("koa-static");
   app.use(serve("./dist"));
 }
