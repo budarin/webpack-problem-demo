@@ -1,0 +1,191 @@
+{
+  "name": "webpack.demo",
+  "version": "1.0.2",
+  "description": "Wepbpack problem demo",
+  "main": "src/server/index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "server-build": "prun server-build"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./config/git/commitizen.js"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,jsx}": [
+      "prun lint-staged"
+    ],
+    "*.{ts,tsx}": [
+      "prun jest-steged-tests"
+    ],
+    "*.{md,css,html,jsx,ts,tsx,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "browserslist": {
+    "development": [
+      "last 1 chrome version"
+    ],
+    "production": [
+      "last 2 chrome version",
+      "last 2 safari version",
+      "last 2 firefox version",
+      "last 2 opera version",
+      "last 2 edge version",
+      "last 2 ios_saf version",
+      "last 2 and_chr version",
+      "last 2 and_ff version",
+      "last 2 and_uc version"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/budarin/kometa.admin.web.app.git"
+  },
+  "keywords": [
+    "admin",
+    "api",
+    "server"
+  ],
+  "author": "Vadim Budarin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/budarin/kometa.admin.web.app/issues"
+  },
+  "homepage": "https://github.com/budarin/kometa.admin.web.app#readme",
+  "dependencies": {
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/plugin-transform-react-constant-elements": "^7.10.1",
+    "@babel/plugin-transform-react-inline-elements": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "@babel/preset-typescript": "^7.10.1",
+    "@commitlint/cli": "^9.0.1",
+    "@testing-library/react": "^10.2.1",
+    "@types/bluebird": "^3.5.32",
+    "@types/debug": "^4.1.5",
+    "@types/ioredis": "^4.16.7",
+    "@types/jest": "^26.0.3",
+    "@types/koa": "^2.11.3",
+    "@types/koa-proxy": "^1.0.1",
+    "@types/node": "^14.0.14",
+    "@types/nodemailer": "^6.4.0",
+    "@types/overload-protection": "^1.2.0",
+    "@types/pino": "^6.3.0",
+    "@types/react": "^16.9.38",
+    "@types/react-dom": "^16.9.8",
+    "@types/supertest": "^2.0.9",
+    "@types/validator": "^13.1.0",
+    "@types/webpack": "^4.41.18",
+    "@types/webpack-env": "^1.15.2",
+    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/parser": "^3.4.0",
+    "babel-jest": "^26.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-closure-elimination": "^1.3.1",
+    "babel-plugin-preval": "^5.0.0",
+    "babel-plugin-react-local": "^0.6.3",
+    "babel-plugin-transform-promise-to-bluebird": "^2.0.0",
+    "babel-preset-minify": "^0.5.1",
+    "bluebird": "^3.7.2",
+    "cache-loader": "^4.1.0",
+    "chunks-2-json-webpack-plugin": "^1.0.4",
+    "circular-dependency-plugin": "^5.2.0",
+    "commitizen": "^4.1.2",
+    "compression-webpack-plugin": "^4.0.0",
+    "concurrently": "^5.2.0",
+    "copy-webpack-plugin": "^6.0.2",
+    "core-js": "3.6.5",
+    "core-js-builder": "^3.6.5",
+    "core-js-compat": "^3.6.5",
+    "css-loader": "^3.6.0",
+    "css-modules-typescript-loader": "^4.0.0",
+    "cssnano": "^4.1.10",
+    "cssnano-preset-advanced": "^4.0.7",
+    "cz-customizable": "^6.2.0",
+    "debug": "^4.1.1",
+    "depd": "^2.0.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.3.1",
+    "eslint-plugin-deprecate": "^0.7.0",
+    "eslint-plugin-fp": "^2.3.0",
+    "eslint-plugin-jest": "^23.17.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-security": "^1.4.0",
+    "extsprintf": "^1.4.0",
+    "fake-style-loader": "^1.0.1",
+    "happypack": "^5.0.1",
+    "has-flag": "^4.0.0",
+    "husky": "^4.2.5",
+    "identity-obj-proxy": "^3.0.0",
+    "inspectpack": "^4.5.2",
+    "ioredis": "^4.17.3",
+    "jest": "^26.1.0",
+    "keygrip": "^1.1.0",
+    "koa": "^2.13.0",
+    "koa-body": "^4.2.0",
+    "koa-proxy": "^1.0.0-alpha.3",
+    "lint-staged": "^10.2.11",
+    "mini-css-extract-plugin": "^0.9.0",
+    "ms": "^2.1.2",
+    "node-mocks-http": "^1.8.1",
+    "nodemon": "^2.0.4",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "overload-protection": "^1.2.1",
+    "pino": "^6.3.2",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.0.5",
+    "prun": "^1.0.1",
+    "qs": "^6.9.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-hot-loader": "^4.12.21",
+    "react-test-renderer": "^16.13.1",
+    "rimraf": "^3.0.2",
+    "safe-buffer": "^5.2.1",
+    "stats-webpack-plugin": "^0.7.0",
+    "style-loader": "^1.2.1",
+    "stylelint": "^13.6.1",
+    "stylelint-a11y": "^1.2.3",
+    "stylelint-config-css-modules": "^2.2.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-no-unsupported-browser-features": "^4.0.0",
+    "stylelint-order": "^4.1.0",
+    "supertest": "^4.0.2",
+    "terser-webpack-plugin": "^3.0.6",
+    "thread-loader": "^2.1.3",
+    "typescript": "^3.9.5",
+    "unused-files-webpack-plugin": "^3.4.0",
+    "validator": "^13.1.1",
+    "webpack": "^4.43.0",
+    "webpack-bundle-analyzer": "^3.8.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-common-shake": "^2.1.0",
+    "webpack-deep-scope-plugin": "^1.6.2",
+    "webpack-manifest-plugin": "^2.2.0",
+    "write-file-webpack-plugin": "^4.5.1"
+  },
+  "devDependencies": {
+    "http-errors": "^1.8.0",
+    "inherits": "^2.0.4",
+    "koa-static": "^5.0.0",
+    "pino-pretty": "^4.0.0",
+    "setprototypeof": "^1.2.0",
+    "supports-color": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=13.0.0"
+  }
+}

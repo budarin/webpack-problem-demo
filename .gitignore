@@ -1,0 +1,10 @@
+node_modules
+dist
+.npmrc
+.env
+.env.*
+!.env.sample
+*.log
+.clinic
+coverage
+.eslintcache

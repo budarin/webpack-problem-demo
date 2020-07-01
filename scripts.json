@@ -1,0 +1,56 @@
+[
+  {
+    "name": "clean",
+    "command": "rimraf .eslintcache & rimraf ./.tmp & rimraf ./dist & rimraf node_modules/.cache & rimraf ./coverage"
+  },
+  {
+    "name": "type-lint",
+    "command": "tsc --project tsconfig.json"
+  },
+  {
+    "name": "eslint",
+    "command": "eslint --cache --ext .js,.jsx,.ts,.tsx src"
+  },
+  {
+    "name": "lint",
+    "command": "prun type-lint && prun eslint"
+  },
+  {
+    "name": "lint-staged",
+    "command": "prun type-lint && prun eslint"
+  },
+  {
+    "name": "server-compile",
+    "command": "webpack --config ./config/webpack/server/dev.webpack.config.js --watch"
+  },
+  {
+    "name": "server-monitoring",
+    "command": "nodemon -w dist/server/server.js dist/server/server.js"
+  },
+  {
+    "name": "ensureServerJsIsCreated",
+    "command": "node ./tools/ensureServerJsIsCreated.js"
+  },
+  {
+    "name": "server-start",
+    "command": "prun ensureServerJsIsCreated && concurrently --kill-others \"prun server-compile\" \"prun server-monitoring\""
+  },
+  {
+    "name": "server-build",
+    "command": "webpack --config ./config/webpack/server/webpack.config.js",
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
+  {
+    "name": "server-debug",
+    "command": "node --inspect ./dist/server/"
+  },
+  {
+    "name": "server-run-build",
+    "command": "node -r dotenv/config.js ./dist/server/ dotenv_config_path=./.env.prod",
+    "env": {
+      "NODE_ENV": "production"
+    }
+  }
+]
